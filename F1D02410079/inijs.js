@@ -15,11 +15,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function validateCommentForm() {
     const nameInput = document.querySelector('input[name="name"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const telephoneInput = document.querySelector('input[name="telephone"]');
     const commentInput = document.querySelector('textarea[name="comment"]');
-    if (!nameInput.value.trim() || !commentInput.value.trim()) {
-        alert('Please fill in both name and comment fields.');
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const telephone = telephoneInput.value.trim();
+    const comment = commentInput.value.trim();
+
+    if (!name || !email || !telephone || !comment) {
+        alert('All fields must be filled in.');
         return false;
     }
+
+    if (name.length < 3) {
+        alert('Name must be at least 3 characters long.');
+        return false;
+    }
+
+    if (!email.includes('@') || !email.includes('.')) {
+        alert('Email must contain "@" and ".".');
+        return false;
+    }
+
+    if (!/^\d+$/.test(telephone) || telephone.length < 10) {
+        alert('Telephone must contain only numbers and be at least 10 digits long.');
+        return false;
+    }
+
     return true;
 }
 
@@ -44,8 +68,8 @@ function renderComment(commentObj, container) {
             <strong>${commentObj.name}:</strong>
             <span class="comment-text">${commentObj.comment}</span>
         </div>
-        <button type="button" class="comment-delete" data-id="${commentObj.id}">Hapus</button>
-    `;
+        <button type="button" class="comment-delete" data-id="${commentObj.id}">Hapus</button>`
+        ;
 
     commentDiv.querySelector('.comment-delete').addEventListener('click', function() {
         deleteComment(commentObj.id);
