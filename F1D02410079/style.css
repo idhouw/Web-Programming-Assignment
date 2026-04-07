@@ -1,5 +1,5 @@
 h1.heading{
-    color: #ffffff;
+    color: #ecfcff;
     background-color: #00111d;
     border-radius: 5px;
     padding: 10px;
@@ -7,15 +7,22 @@ h1.heading{
     margin-bottom: 10px;
 }
 
+h3.heading3{
+    color: #ecfcff;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
 h2.heading2{
-    color: #ffffff;
+    color: #ecfcff;
     font-size: 24px;
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
 p.paragraph1{
-    color: #ffffff;
+    color: #ecfcff;
     font-size: 16px;
     line-height: 1;
     margin-bottom: 15px;
@@ -67,4 +74,63 @@ a {
 :visited{
     color: #ff4b60;
     text-decoration: none;
+}
+.comment {
+    background-color: #002233;
+    color: #ecfcff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border-left: 4px solid #a9aef4;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.comment strong {
+    color: #00d0ff;
+}
+
+.comment-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment-text {
+    color: #ecfcff;
+    display: inline-block;
+    max-width: calc(100% - 100px);
+}
+
+.comment-delete {
+    background-color: #fb3765;
+    border: none;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.comment-delete:hover {
+    background-color: #ff1f4c;
+}
+
+.comment-delete:active {
+    background-color: #d40030;
+}
+
+form input, textarea {
+    background-color: #002233;
+    color: #ecfcff;
+    border: 1px solid #a9aef4;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
